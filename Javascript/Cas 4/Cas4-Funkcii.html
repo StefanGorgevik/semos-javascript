@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Functions</title>
+
+	<script type="text/javascript">
+		var amount = 100;
+		
+		function price(amount) {
+			console.log(amount);
+			return amount+=5;
+		}
+
+
+		function print() {
+			console.log("Hello!");
+		}
+		
+		var a = 5;
+		var y = 10;
+
+		function proizvod(x,y) {
+			return x*y;
+		}
+
+		console.log(proizvod(a,y));
+
+		function printName() {
+			var name = prompt("Enter your name!");
+			var age = prompt("Enter your age!");
+			age = parseInt(age);
+			return "I am " + name + " and I am " + age + " years old!";
+		}
+
+		
+
+		function factorial(num) {
+			var result =1;
+			for(var i = num-1; i > 0; i--) {
+				result *= i;
+			}
+			return result;
+		}
+
+		// function factorial(num) {
+		// 	var result =1;
+		// 	for(var i = 2; i <num; i++) {
+		// 		result *=i;
+		// 	}
+		// 	return result;
+		// }
+
+		// console.log(Math.pow(3,2));
+
+
+		//STEPEN
+
+		// function power(base, exponent) {
+		// 	var result = 1;
+		// 	for(var i = 0; i < exponent; i++){
+		// 		result *= base;
+		// 	}
+		// 	return result;
+		// }
+
+		//forEach 
+
+
+
+		// var items = [1,2,3];
+
+		// items.forEach(function(item){
+		// 	console.log(item);
+		// });
+
+		// var object = {a:1,b:2,c:3};
+
+		// for(var i in object) {
+		// 	//console.log(i + ":" + object[i]);  prints: a:1  b:2  c:3
+		// 	console.log(object[i]);
+		// };
+		
+		
+
+	</script>
+
+</head>
+<body>
+
+</body>
+</html>

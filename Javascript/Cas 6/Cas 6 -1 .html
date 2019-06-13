@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cas 6-1</title>
+</head>
+<body>
+
+	<button id="button" style="background-color: grey;">Button</button>
+
+	<h1>Speed</h1>
+
+	<h3>Miles</h3>
+
+
+	<script type="text/javascript">
+
+
+		//Arrow function or known as Fat Arrow function
+
+		// var a = function(parametar){
+		// 	return parametar * 2;
+		// }
+		// console.log(a(5))
+
+		//same with arrow var a = (parametar) => {parametar * 2}
+
+		//var double = (a) => {return a * 2}
+		//           argument
+
+		//same as : function double(a) {
+		//	return a * 2;
+		// }
+
+		//console.log(double(3));
+
+		//simple
+		// var triple = a =>  a * 3;
+		// console.log(triple(3));
+
+
+		//without argument
+		// var s = () => console.log("zdravo");
+	 //  	s();
+
+	  	//THIS keyword (you can have as much this.var as you want)
+	  	// function Person() {
+	  	// 	this.age=0;
+	  	// 	//this.num = 10;
+	  	// 	setInterval(()=> {
+	  	// 		this.age++
+	  	// 		//this.num++
+	  	// 		console.log(this.age)}, 1000); //(this.age, this.num)
+	  	// }
+	  	// var p = new Person();
+
+	  	// var car1 = new Car();
+	  	// function Car() {
+	  	// 	this.speed = 0;
+	  	// 	this.miles = 0;
+	  	// 	setInterval(() => {
+	  	// 		this.speed++;
+	  	// 		document.querySelector("h1").innerHTML = this.speed;
+	  	// 		this.miles+=3;
+	  	// 		document.querySelector("h3").innerHTML = this.miles;
+	  	// 	}, 1000);
+	  	// }
+
+
+
+	  	//adding an object to a func var
+	  	    //var animal = (type,name) => ({type: type, name:name});
+	  	//or : {type: "Dog", name:"Ghost"}
+	  		//console.log(animal("Dog","Damon"));
+
+	 //  	function Book (type, author) {
+	 //    	this.type = type;
+	 //    	this.author = author;
+	 //    	this.getDetails = function () {
+  //       return this.type + " written by " + this.author;
+  //   	}
+		// }
+		// var book = new Book("Fiction", "Peter King");
+		// console.log(book.getDetails());
+
+
+	  	//document.getElementById("").addEventListener("click", function(){});
+	  	
+	  	// OR    document.getElementById("button").addEventListener("click", () =>{  
+	  	 	// })
+	  	 	// var button = document.getElementById("button")
+	  	 	//  button.addEventListener("click", () =>{  
+	  	 	//  	if(button.style.backgroundColor === "grey"){
+	  	 	//  	button.style.backgroundColor = "blue";
+	  	 	//  	button.style.width = "150px";
+	  	 	//  	}
+	  	 	//  	else {
+	  	 	//  		button.style.backgroundColor = "grey"
+	  	 	//  		button.style.width = "80px";
+	  	 	//  		button.style.height = "40px";
+	  	 	//  	}
+	  	  // })
+
+
+	  	  //MAP(used for arrays and objects)
+
+	  	  // var array1 = [1,2,3,6,7];
+	  	  // var map1 = array1.map(x=>x*2)
+	  	  // console.log(map1);
+
+	  	  // var instruments = ["Guitar", "Saxophone", "Trumpet", "Bass", "Piano", "Violin", "Ukulele"];
+	  	  // var instruments1 = instruments.map(function(element, index){
+	  	  // 	var length = element.length
+	  	  // 	return element + " index is : " + index + " and length is: " + length;
+	  	  // });
+	  	  // console.log(instruments1);
+
+	  	  //Callback function
+		
+		// function saySmth() {
+		// 	console.log("Hello");
+		// 	console.log("Goobye");
+		// }
+
+		//setInterval(saySmth, 5000);
+
+		// setTimeout(function() {
+		// 	console.log("Hello world")
+		// }, 5000);
+
+		function sayHi(phrase,who){
+			alert(phrase + " " + who)
+		}
+
+		//setTimeout(sayHi, 3000, "Hi", "Stefan");
+
+		
+
+		// var bomb = setInterval(function() {
+		// 	console.log("BOOM!");
+		// }, 10000)
+
+		// setTimeout(function(){
+		// 	clearInterval(bomb);
+		// 	alert("Bomb defused");
+		// }, 9000)
+
+	  	  //Callback callback function :D
+
+	 //  	function greeting(name) {
+  // 				alert('Hello ' + name);
+		// 	}
+
+		// function processInput(callback) {
+		// //						function as parametar
+		// 	 	var name = prompt("Please enter your name.");
+		// 	  	callback(name); 
+		// 	  	console.log(callback);
+		// 	}
+
+		//TO CALL!processInput(greeting);	
+		//						parametar as function
+
+		// function doThing(other){
+		// 	var x = 8;
+		// 	var name = "Stefan"
+		// 	other(name);
+		// 	console.log(x)         //step2
+		// 	console.log(name)	   //step3
+		// }
+
+		// function helloThere(ime){
+		// 	console.log("Hello there function!", ime)  //step 1
+		// }
+
+		// doThing(helloThere);
+
+		
+
+		function processInput2(callback) {
+		//						function as parametar
+			 	var name = "stefcho"
+			  	callback(name); 
+			  	console.log("THIS IS THE CALLBACK FUNCTION - " + callback);
+			}
+
+
+		function greeting2(ime) {
+  				console.log('Hello ', ime);
+			}
+			
+		processInput2(greeting2)
+
+
+
+
+
+
+
+
+		//Promises
+
+		//  var p = new Promise((resolve,reject) =>{
+		//  	var a = 1 + 1;
+		//  	if(a !== 2){
+		//  		resolve("Success!");
+		//  	}
+		//  	else {
+		//  		reject("Failed!");
+		// 	}
+		// 	})
+		// p.then((message) =>{
+		// 	console.log("This is in the THEN " + message);
+		// }).catch((message) =>{
+		// 	console.log("This is in the CATCH " + message);
+		// })
+
+		// //Promise example 2
+		// var userLeft = false;
+		// var userWatchingCatMeme = true;
+
+		// function watchTutorialPromise() {
+		// 	return new Promise((resolve,reject) =>{
+		// 		if(userLeft) {
+		// 			reject({
+		// 				name: "User Left",
+		// 				message: ":("
+		// 			})
+		// 		}else if(userWatchingCatMeme) {
+		// 			reject({
+		// 				name:"User is watching Cat Meme",
+		// 				message: "WebDevSimplified < Cat"
+		// 			})
+		// 		}else {
+		// 			resolve("Thumbs up and Subscribe!")
+		// 		}
+		// 	})
+		// }
+
+		// watchTutorialPromise().then((message) => {
+		// 	console.log("Success " + message)
+		// }).catch((error) => {
+		// 	console.log(error.name + " " + error.message)
+		// })
+
+		// Promises example 3
+
+		// var recordVideoOne = new Promise((resolve, reject) => {
+		// 	resolve("Video 1 recorded!")
+		// })
+		// var recordVideoTwo = new Promise((resolve, reject) => {
+		// 	resolve("Video 2 recorded!")
+		// })
+
+		// Promise.all([
+		// 		recordVideoOne,
+		// 		recordVideoTwo
+		// 	]).then((messages) => {
+		// 		console.log(messages);
+		// 	})
+
+
+
+		//http://dummy.restapiexample.com/api/v1/employees
+
+		//Fetch
+		// var array = [];
+		// var getPosts = () => {
+		// 	fetch("http://dummy.restapiexample.com/api/v1/employees")
+		// 	//.then(response=>{console.log(response.json())})
+		// 	.then((response) => {
+		// 			console.log(response.status)
+		// 			response.json().then(json =>{			
+		// 			console.log(json);		
+		// 		})
+		// 	}) 
+		// 	.catch((err) => {
+		// 		console.log(err)
+		// 	})
+		// }
+
+		// //setInterval(getPosts, 10000);
+		// getPosts();
+
+		// var niza = [];
+		// for(var i = 0; i < array.length; i++) {
+		// 	niza.push(array[i]);
+
+		// 	//console.log(array[i] + "123");    // CONST!
+		// }
+		//console.log(array);
+
+
+		// OR
+		 // .then(response => {
+		 // 	response.json().then(json) => {
+			// 	console.log(response.status)
+		 // 		var a = json;
+		 // 		console.log9(a)
+			// }
+		 // })
+
+		// .then(response=>response.json())
+		// 	.then(json =>{
+		// 		console.log(response.status)
+		// 		array = json;
+		// 		console.log(array)})
+
+
+
+
+		//Arrow function
+
+		// var a = function(parametar){
+		// 	return parametar * 2;
+		// }
+		// console.log(a(5))
+
+		// //Fat Arrow function
+
+		// var double = (a) => {return a * 2}
+		// //           argument
+
+		// //same as : function double(a) {
+		// //	return a * 2;
+		// // }
+
+		// console.log(double(3));
+
+		// //simple
+		// var triple = a =>  a * 3;
+		// console.log(triple(3));
+
+
+		// //without argument
+		// var s = () => console.log("zdravo");
+	 //  	s();
+
+	 //  	//adding an object to a func var
+	 //  	var animal = (type,name) => ({type: type, name:name});
+	 //  	//or : {type: "Dog", name:"Ghost"}
+	 //  	console.log(animal("Dog","Damon"));
+
+
+	 //  	//document.getElementById("").addEventListener("click", function(){});
+	  	
+	 //  	//OR    
+	 //  	// document.getElementById("button").addEventListener("click", () =>{  
+	 //  	//  	})
+	 //  	 	var button = document.querySelector("#button")
+	 //  	 	 button.addEventListener("click", () =>{  
+	 //  	 	 	if(button.style.backgroundColor === "grey"){
+	 //  	 	 	button.style.backgroundColor = "blue";
+	 //  	 	 	button.style.width = "150px";
+	 //  	 	 	}
+	 //  	 	 	else {
+	 //  	 	 		button.style.backgroundColor = "grey"
+	 //  	 	 		button.style.width = "80px";
+	 //  	 	 		button.style.height = "40px";
+	 //  	 	 	}
+	 //  	  })
+
+
+	 //  	  //MAP(used for arrays and objects)
+
+	 //  	  var array1 = [1,2,3,6,7];
+	 //  	  var map1 = array1.map(x=>x*2)
+	 //  	  console.log(map1);
+
+	 //  	  //Callback function
+		
+		// function saySmth() {
+		// 	console.log("Hello");
+		// 	console.log("Goobye");
+		// }
+
+		// //setInterval(saySmth, 5000);
+
+		// // setTimeout(function() {
+		// // 	console.log("Hello world")
+		// // }, 5000);
+
+		// function sayHi(phrase,who){
+		// 	alert(phrase + " " + who)
+		// }
+
+		// //setTimeout(sayHi, 3000, "Hi", "Stefan");
+
+		
+
+		// // var bomb = setInterval(function() {
+		// // 	console.log("BOOM!");
+		// // }, 10000)
+
+		// // setTimeout(function(){
+		// // 	clearInterval(bomb);
+		// // 	alert("Bomb defused");
+		// // }, 9000)
+
+	 //  	  //Callback callback function :D
+
+	 //  	function greeting(name) {
+  // 				alert('Hello ' + name);
+		// 	}
+
+		// function processInput(callback) {
+		// //						function as parametar
+		// 	 	var name = prompt("Please enter your name.");
+		// 	  	callback(name); 
+		// 	  	console.log(callback);
+		// 	}
+
+		// // TO CALL: processInput(greeting);	
+		// //						parametar as function
+
+
+
+		// //Promises
+
+		// var p = new Promise((resolve,reject) =>{
+		// 	var a = 1 + 1;
+		// 	if(a === 2){
+		// 		resolve("Success!");
+		// 	}
+		// 	else {
+		// 		reject("Failed!");
+		// 	}
+		// })
+		// p.then((message) =>{
+		// 	console.log("This is in the THEN " + message);
+		// }).catch((message) =>{
+		// 	console.log("This is in the CATCH " + message);
+		// })
+		//http://dummy.restapiexample.com/api/v1/employees
+
+		// //Fetch
+		// var array = [];
+		// var getPosts = () => {
+		// 	fetch("http://dummy.restapiexample.com/api/v1/employees")
+		// 	//.then(response=>{console.log(response.json())})
+		// 	.then((response) => {
+		// 			console.log(response.status)
+		// 			response.json().then(json =>{
+		// 			array = json;
+		// 			console.log(array);
+		// 			console.log(array.length)			
+		// 		})
+		// 	}) 
+		// 	// .catch((err) => {
+		// 	// 	console.log(err)
+		// 	// })
+		// }
+
+		//setInterval(getPosts, 10000);
+		// getPosts();
+
+		// var niza = [];
+		// for(var i = 0; i < array.length; i++) {
+		// 	niza.push(array[i]);
+
+		// 	//console.log(array[i] + "123");    // CONST!
+		// }
+		console.log(array);
+
+
+		// OR
+		 // .then(response => {
+		 // 	response.json().then(json) => {
+			// 	console.log(response.status)
+		 // 		var a = json;
+		 // 		console.log9(a)
+			// }
+		 // })
+
+		// .then(response=>response.json())
+		// 	.then(json =>{
+		// 		console.log(response.status)
+		// 		array = json;
+		// 		console.log(array)})
+
+
+
+	  	  
+	</script>
+
+</body>
+</html>

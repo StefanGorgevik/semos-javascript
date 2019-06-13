@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM</title>
+	<style type="text/css">
+		.some_class{
+			color:red;
+
+		}
+
+
+	</style>
+
+</head>
+<body>
+
+	<h2 id="title">Stefan Gorgevik!</h2>
+
+	<button id="button">Show me the date!</button>
+
+	<h2 id="result"></h2>
+
+	<button id="lightOn">Turn the light on!</button>
+
+	<img src="https://www.w3schools.com/js/pic_bulboff.gif">
+
+	<button id="lightOff"></button>
+
+	<!-- 	<div class="blok">Semos</div>
+	<div class="blok">Semos JS</div>
+	
+	<a href="#">Link</a>
+	<a href="#">Link2</a> -->
+
+	<script type="text/javascript">
+
+		//console.dir(document.getElementById("title")); //go printa celoto drvo 
+
+
+		//document.getElementById("title").innerHTML = "Hello World!";
+
+		// document.getElementById("title").innerHTML = '<a href ="https://www.google.com">Link</a>';
+
+
+		//or
+
+		// var title = document.getElementById("title")''
+		// title.innerHTML = '<a href ="https://www.google.com">Link</a>';
+
+
+		// var p = document.createElement("p");
+		// p.innerText = "semos";
+		// title.append(p);
+
+		// console.dir(document.getElementsByClassName("blok"));
+
+		// document.getElementsByClassName("blok")[0].innerHTML = "Hello World!";
+
+		// document.getElementsByTagName("a")[0].innerText = "Links";
+		// document.getElementsByTagName("a")[0].attributes[0].value = "https://www.google.com";
+
+		// document.getElementsByTagName("a")[1].attributes[0].value = "https://www.instagram.com";
+
+		document.write("Zdravo");
+		document.title = "Semos";
+
+		//document.getElementById("title").setAttribute("class", "some_class");
+
+		// or 
+
+		document.getElementById("title").classList.add("some_class");
+
+		// document.getElementById("button").setAttribute("class", "some_class"); //give a class as an attribute and the name of class
+
+
+		// document.getElementById("result").innerText = "Hello world";
+		// document.getElementById("result").setAttribute("class", "some_class");
+
+
+		document.getElementById("button").addEventListener("click", function(){
+			document.getElementById("result").innerHTML = new Date();
+		});
+
+		document.getElementById("lightOff").innerText = "Turn the light off!";
+
+		document.getElementById("lightOn").addEventListener("click", function(){
+			document.getElementsByTagName("img")[0].attributes[0].value = "https://www.w3schools.com/js/pic_bulbon.gif";
+		});
+
+		document.getElementById("lightOff").addEventListener("click", function(){
+			document.getElementsByTagName("img")[0].attributes[0].value = "https://www.w3schools.com/js/pic_bulboff.gif";
+		});
+
+
+	</script>
+
+
+
+</body>
+</html>

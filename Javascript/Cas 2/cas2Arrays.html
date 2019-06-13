@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Arrays</title>
+	<script type="text/javascript">
+
+		//ARRAY
+
+
+	var a = 5	
+	var array = [1,a,2,"stefan"]
+	console.log(array);
+	console.log(array[2]);
+
+	array[2] = "Hristijan";
+	console.log(array);
+
+
+	//PUSH AND POP
+
+	array.push(55);
+	console.log(array);
+
+	var b = array.pop()
+	console.log(b);
+	console.log(array);
+
+
+	//Slice
+
+	// var array2 = ["Angular", "React", "Vue", "Node"];
+	// var a = array2.slice(1,3);
+	// console.log(a);
+	// console.log(array2)
+
+	// console.log(array2.length);
+
+	//Splice
+
+	var array2 = ["Angular", "React", "Vue", "Node"];
+	console.log(array2);
+
+	var a = array2.splice(3,4);
+	console.log(a);
+	console.log(array2);
+
+	var b = array2.splice(1,2);
+	console.log(b);
+	console.log(array2);
+
+
+	//UNSHIFT AND SHIFT
+
+
+	array2.unshift("JS")
+	console.log(array2);
+
+	array2.shift();
+	console.log(array2);
+
+
+
+
+
+
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

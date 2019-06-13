@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prototype</title>
+</head>
+<body>
+
+
+	<script type="text/javascript">
+		
+		//Prototype functions
+
+		// function Rabbit(type) {
+		// 	this.type = type;     //constructor
+		// }
+
+
+		// Rabbit.prototype.speak = function(phrase) {
+		// 	console.log("HI!");
+		// }
+
+		// var a = new Rabbit("Type");
+
+		// a.speak("Hi"); // calling the function
+
+
+
+		//EXAMPLE
+
+		// function Person(firstname, lastname, age, profession) {
+		// 	this.firstname = firstname;
+		// 	this.lastname = lastname;
+		// 	this.age = age;
+		// 	this.profession = profession;
+		// }
+
+		// Person.prototype.greeting = function(phrase) {
+		// 	alert(phrase + " I am " + this.firstname);                           
+		// }
+
+		// var person = new Person("Stefan", "Gorgevik", 25, "Programmer");
+		
+		// console.log(person);
+		// person.greeting("Hello")
+
+		// var person2 = new Person("BDAA", "HGAA" 26, "Driver");
+		// console.log(person2);
+
+		// PLAYER EXAMPLE
+
+		// function Player() {
+		// 	this.name;
+		// 	this.hitpoints = 100;
+		// 	this.attack = function attack(opponent) {
+		// 		opponent.hitpoints -= 10;
+		// 		opponent.energy -= 30;
+		// 		console.log(this.name + " just hit " + opponent.name)
+		// 	}
+		// }
+
+		// var p1 = new Player();
+		// var p2 = new Player();
+
+		// p1.name = "Conan";
+		// p2.name = "Hercules";
+
+		// p1.attack(p2);
+		// console.log(p2.name + " has " + p2.hitpoints + " hit points left!");
+		// p1.attack(p2);
+		// console.log(p2.name + " has " + p2.hitpoints + " hit points left!");
+		// p2.attack(p1);
+		// console.log(p1.name + " has " + p1.hitpoints + " hit points left and " + p2.name + " has " + p2.hitpoints + " hit points left!");
+
+		// // add a heal method
+		// Player.prototype.heal = function heal(targetPlayer) {
+		// 	targetPlayer.hitpoints += 5;
+		// 	console.log(p1.name + " has healed " + p2.name)
+		// };
+
+		// p1.heal(p2);
+		// console.log(p2.name + " has " + p2.hitpoints + " hit points left!");
+
+		// //add an energy propery to the Player object
+
+		// Player.prototype.energy = 200;
+		// console.log(p1.energy);
+		
+
+
+		//same example with a class!
+
+		// class Player {
+		// 	constructor(name,hitpoints,energy) {
+		// 		this.name = name;
+		// 		this.hitpoints = 100;
+		// 		this.energy = 200;
+		// 	}
+
+		// 	attack(opponent) {
+		// 		opponent.hitpoints -= 10;
+		// 		console.log(this.name + " just hit " + opponent.name + " and " + opponent.name + " now has " + opponent.hitpoints + " hitpoints.")
+		// 		return this;
+		// 	}
+
+		// 	heal(targetPlayer) {
+		// 		targetPlayer.hitpoints += 5;
+		// 		console.log(this.name + " has healed " + targetPlayer.name + "!");
+		// 		return this;
+		// 	}
+		// 	mana(attacker) {
+		// 		attacker.energy -= 20;
+		// 		console.log(this.name + "'s energy is now " + this.energy + "!");
+		// 		return this;
+		// 	}
+		// }
+
+		// var playerOne = new Player();
+		// var playerTwo = new Player();
+
+		// playerOne.name = "Stefan";
+		// playerTwo.name = "Mike";
+
+		// playerOne.attack(playerTwo).mana(playerOne);
+		// console.log(playerTwo.name + " has " + playerTwo.hitpoints + " hitpoints left!");
+
+		// playerOne.attack(playerTwo).mana(playerOne).heal(playerTwo)
+		// console.log(playerTwo.name + " has " + playerTwo.hitpoints + " hitpoints left!");
+
+		// playerTwo.attack(playerOne).mana(playerTwo);
+		// console.log(playerOne.name + " has " + playerOne.hitpoints + " hitpoints left!");
+	
+
+
+		//CLASSES
+
+
+
+		// class User{
+		// 	constructor(name,lastname) {
+		// 		this.name = name;
+		// 		this.lastname = lastname;
+		// 	}
+
+		// 	sayHi() {
+		// 		alert("Hi " + this.name + " " + this.lastname);
+		// 	}
+		// }
+
+		// var u = new User("Stefan", "Gorgevik");
+		// var b = new User("Bla", "Bla")
+	
+		// u.sayHi();
+		// b.sayHi();
+
+
+		//EXERCISE
+
+		// class Rectangle {
+		// 	constructor(length,width) {
+		// 		this.length = length;
+		// 		this.width = width;
+		// 	}
+		// 	calculate() {
+		// 		var result = this.length * this.width;
+		// 		console.log(result);
+		// 		return result;
+		// 	}
+		// }
+
+		// var a = new Rectangle(10, 20);
+		// a.calculate();
+
+		// var klasa = ["Stefan","Radica","Jovica","Slavica"];
+
+		// class Family {
+		// 	constructor(klasa){
+
+		// 	}
+		// 	make() {
+		// 		var make;
+		// 		for(var i = 0; i < klasa.length;i++){
+		// 			var mes = klasa[i] + " Hi";
+		// 			console.log(klasa[i] + " Hi")
+					
+		// 		}
+		// 		return mes;
+		// 	}
+		// }
+
+		// var novaKlasa = new Family(klasa);
+		// novaKlasa.make()
+
+
+			//INHERITANCE
+
+		// class Teacher {
+		// 	constructor(firstname,lastname,subject){
+		// 		this.firstname = firstname;
+		// 		this.lastname = lastname;
+		// 		this.subject = subject;
+		// 	}
+
+		// 	greeting() {
+		// 		return alert("Hello " + this.firstname)
+		// 	}
+		// }
+
+		// var teacher = new Teacher("Stefan", "Gorgevik", "Programming");
+		// teacher.greeting();
+
+
+
+		// class UniTeacher extends Teacher {
+		// 	constructor(firstname,lastname,subject,university,gender) {
+		// 		super(firstname,lastname,subject)
+		// 		this.university = university;
+		// 		this.gender =gender;
+		// 	}
+		// }
+
+		// var uniTeacher = new UniTeacher("Stef", "Gorg", "Program", "University", "Male");
+		// uniTeacher.greeting()
+
+		// class Employee {
+		// 	constructor(name,age,salary,tasks) {
+		// 		this.name= name;
+		// 		this.age=age;
+		// 		this.salary = salary;
+		// 		this.tasks = [];
+		// 	}
+		// 	work() {
+		// 		var currentTask = this.tasks.shift();
+		// 		console.log(this.name + " " + currentTask);
+		// 	} 
+		// 	collectSalary(){
+		// 		console.log(this.name + " received " + this.salary)
+		// 	}	
+		// }
+	
+		// // var employee = new Employee("Stefan", 25, 500, "Task1,Task2");
+		// // employee.work();
+
+
+		// class Junior extends Employee{  
+		// 	constructor(name,age,salary,tasks) {
+		// 		super(name,age,salary,tasks);
+		// 		this.tasks.push(" is working on a simple task!")
+		// 	}
+		// }
+
+		// var junior = new Junior("Stefan", 25, 500);
+		// junior.work();
+		// junior.tasks.push("Make new classes");
+		// //console.log(junior.tasks);
+		// junior.collectSalary();
+
+		// class Senior extends Employee {
+		// 	constructor(name,age,salary,tasks) {
+		// 		super(name,age,salary,tasks);
+		// 		this.tasks.push(" is working on tricky tasks!");
+		// 		this.tasks.push(" is supervising a Junior employee!");
+		// 		this.tasks.push(" is taking some time from work!");
+		// 	}
+		// }
+
+		// var senior = new Senior();
+
+		// class Manager extends Employee {
+		// 	constructor(name,age,salary,tasks) {
+		// 		super(name,age,salary,tasks);
+		// 		this.tasks.push(" schedule meeting!");
+		// 		this.tasks.push(" yelled at an emp!");
+
+		// 	}
+		// }
+
+
+// 		class Email {
+// 			constructor(from, to, subject, message){
+// 				this.from = from;
+// 				this.to = to;
+// 				this.subject = subject;
+// 				this.message = message;
+// 			}
+// 			printFrom(){
+// 				this.From = prompt("The message is from?")
+// 				console.log("The message is from: " + this.from)
+// 			}
+// 			printTo(){
+// 				this.to = prompt("Enter the recepient!")
+// 				console.log("This will be sent to: " + this.to)
+// 			}
+// 			printSubject(){
+// 				this.subject = prompt("Enter your subject!")
+// 				console.log("The subject is: " + this.subject)
+// 			}
+// 			printMessage(){
+// 				this.message = prompt("Enter your message!")
+// 				console.log("The message is: " + this.message)
+// 			}
+// }
+
+// 			var email = new Email();
+// 			email.printMessage();
+
+		// 	class Email {
+		// 	constructor(from, to, subject, message) {
+		// 		this.from = prompt("The message is from?");
+		// 		this.to = prompt("Enter the recepient!");
+		// 		this.subject = prompt("Enter your subject!");
+		// 		this.message = prompt("Enter your message!");
+		// 	}
+		// 		poraka(){	
+		// 			console.log("This message is from " + this.from + " and will be sent to " + this.to + ".");
+		// 			console.log("The subject is: " + this.subject + " and the message is " + this.message + ".");
+		// 	}
+		// }
+
+		// 	var poraka = new Email();
+		// 	poraka.message();
+
+			class Male {
+				constructor(name,age) {
+					this.name = name;
+					this.age = age;
+				}
+
+				printInfo() {
+					console.log("The name is " + this.name + " and the age is " + this.age)
+				}
+			}
+
+			class Female extends Male {
+				constructor(name,age) {
+					super(name,age)
+				}
+			}
+
+			var maleArray = [{name: "Darko", age:28}];
+			var femaleArray = [{name: "Bojana", age:31}];
+
+
+			class Date {
+				constructor(male = new Male(maleArray[0]),female = new Female(femaleArray[0]) ) {
+					this.male = male;
+					this.female = female;
+					this.maleAge = maleArray[0].age	
+					this.femaleAge = femaleArray[0].age	
+				}
+				compare() {
+					if(Math.abs(this.maleAge - this.femaleAge)<= 5) {
+						console.log("They can date!");
+					}
+					else {
+					console.log("They can't date!")
+					}
+				}
+			}
+			var sredba = new Date();
+			sredba.compare()
+		
+
+			//or
+		class Datee {
+				constructor(male = new Male("Darko", 23),female = new Female("Bojana",31) ) {
+					this.male = male;
+					this.female = female;
+						
+				}
+				compare() {
+					if(Math.abs(this.male.age - this.female.age)<= 5) {
+						console.log("They can date!");
+					}
+					else {
+					console.log("They can't date!")
+					}
+				}
+			}
+			var sredbaa = new Datee();
+			sredbaa.compare()
+
+
+
+				class Dateee {
+				constructor(male = new Male(prompt("Male: Enter your age!")),female = new Female(prompt("Female: Enter your age!")) ) {
+					this.male = parseInt(male);
+					this.female = parseInt(female);
+						
+				}
+				compare() {
+					if(Math.abs(this.male - this.female)<= 5) {
+						console.log("They can date!");
+					}
+					else {
+					console.log("They can't date!")
+					}
+				}
+			}
+			var sredbaaa = new Dateee();
+			sredbaaa.compare()
+		
+
+	</script>
+
+</body>
+</html>
