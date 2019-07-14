@@ -175,10 +175,12 @@
 
 //Create a program where the last 3 digits of a number are added together
 
-var result;
-var num = 111;
+// var result;
+// var num = 111;
 
-for(var i = 0; i = num; i++) {
-		result = result += i;
-	console.log(result);
-}
+// for(var i = 0; i = num; i++) {
+// 		result = result += i;
+// 	console.log(result);
+// }
+
+
